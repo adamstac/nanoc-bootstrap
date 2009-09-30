@@ -1,0 +1,30 @@
+!!!
+%html
+  %head
+    %title
+      A Brand New nanoc Site - <%= @item[:title] %>
+    %link{ :href => "/style.css", :rel => "stylesheet", :type => "text/css", :media => "screen" }
+  %body
+    #main
+    #sidebar
+      %h2
+        Documentation
+      %ul
+        %li
+          %a{ :href => "http://nanoc.stoneship.org/help/tutorial/" }
+            Tutorial
+        %li
+          %a{ :href => "http://nanoc.stoneship.org/help/manual/" }
+            Manual
+      %h2
+        Community
+      %ul
+        %li
+          %a{ :href => "http://groups.google.com/group/nanoc/" }
+            Discussion Group
+        %li
+          %a{ :href => "http://groups.google.com/group/nanoc-es/" }
+            Spanish Discussion Group
+        %li
+          %a{ :href => "http://projects.stoneship.org/trac/nanoc/" }
+            Wiki
