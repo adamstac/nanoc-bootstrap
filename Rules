@@ -1,12 +1,22 @@
 #!/usr/bin/env ruby
+require 'compass'
+Compass.configuration.parse 'config/compass.config'
+
+compile '/stylesheets/*/' do
+   filter :sass, Compass.sass_engine_options
+end
+
+route '/stylesheets/*/' do
+   item.identifier.chop + '.css'
+end
 
 compile '*' do
-  filter :haml
-  layout 'default'
+   filter :haml
+   layout 'default'
 end
 
 route '*' do
   item.identifier + 'index.html'
 end
 
-layout '*', :haml
+layout '*', :haml, :format => :html5
